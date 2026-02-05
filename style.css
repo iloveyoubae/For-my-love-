@@ -1,0 +1,121 @@
+/* General styling */
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  background: #ffe6e6;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* Main container */
+.container {
+  position: relative;
+  z-index: 10; /* above everything initially */
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+button {
+  padding: 15px 30px;
+  margin: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+#yesBtn {
+  background-color: #ff4d6d;
+  color: white;
+  width: 120px;
+  height: 60px;
+}
+
+#noBtn {
+  background-color: #ffb3c1;
+  color: white;
+  width: 120px;
+  height: 60px;
+}
+
+/* Heart overlay at start */
+.heart-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10rem;
+  z-index: 1000;
+  animation: fadeOut 1.5s forwards;
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0; display:none;}
+}
+
+/* Celebration screen */
+#celebration {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+#teddies {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  position: relative;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-20px);}
+}
+
+/* Floating hearts */
+#hearts-container div {
+  position: absolute;
+  font-size: 2rem;
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  0% {transform: translateY(0) rotate(0deg); opacity: 1;}
+  100% {transform: translateY(-500px) rotate(360deg); opacity: 0;}
+}
+
+/* Confetti animation */
+@keyframes confettiFall {
+  0% {transform: translateY(0) rotate(0deg); opacity: 1;}
+  100% {transform: translateY(500px) rotate(360deg); opacity: 0;}
+}
